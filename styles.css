@@ -209,8 +209,12 @@ button.Hero-button-right:hover {
 
 main {
   font-family: "Montserrat", sans-serif;
-  display: flex;
   margin: 20px;
+}
+
+.product-section {
+  display: flex;
+  flex-direction: row;
 }
 
 .produk {
@@ -403,17 +407,13 @@ aside img {
   margin-bottom: 0;
 }
 
-.footer {
+.footer-inner {
+  display: flex;
   background-color: #ebf2f3;
   color: #659a9f;
   padding: 50px 0;
-}
-
-.footer-inner {
-  display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -421,6 +421,8 @@ aside img {
   flex: 1;
   min-width: 220px;
   margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
   padding: 0 15px;
 }
 
@@ -449,7 +451,7 @@ aside img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  margin-top: auto; /* Menempatkan footer-bottom di bagian bawah */
 }
 
 .footer-bottom .logo-text {
@@ -462,9 +464,9 @@ aside img {
 }
 
 .footer-bottom p {
-  margin-left: 20px;
+  margin-right: 3%;
   color: #fff;
-  text-align: center;
+  text-align: end;
   flex: 1;
 }
 
@@ -579,7 +581,7 @@ aside img {
     margin: 10px 0;
   }
   .footer-bottom p {
+    margin-right: 7%;
     font-size: 10px;
-    margin: 10px 0;
   }
 }

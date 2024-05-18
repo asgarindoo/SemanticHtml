@@ -223,17 +223,13 @@
         color: #fff;
       }
 
-      .footer {
+      .footer-inner {
+        display: flex;
         background-color: #ebf2f3;
         color: #659a9f;
         padding: 50px 0;
-      }
-
-      .footer-inner {
-        display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
-        max-width: 1200px;
         margin: 0 auto;
       }
 
@@ -241,6 +237,8 @@
         flex: 1;
         min-width: 220px;
         margin-bottom: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
         padding: 0 15px;
       }
 
@@ -269,7 +267,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        flex-wrap: wrap;
+        margin-top: auto; /* Menempatkan footer-bottom di bagian bawah */
       }
 
       .footer-bottom .logo-text {
@@ -282,9 +280,9 @@
       }
 
       .footer-bottom p {
-        margin-left: 20px;
+        margin-right: 3%;
         color: #fff;
-        text-align: center;
+        text-align: end;
         flex: 1;
       }
 
@@ -340,8 +338,8 @@
           margin: 10px 0;
         }
         .footer-bottom p {
+          margin-right: 7%;
           font-size: 10px;
-          margin: 10px 0;
         }
       }
     </style>
@@ -430,10 +428,8 @@
         <div class="footer-column">
           <h3>About Us</h3>
           <p>
-            Welcome to Living Loft, your one-stop destination for high-quality
-            furniture and home decor. We are passionate about providing our
-            customers with stylish and functional furniture pieces that elevate
-            their living spaces.
+            Welcome to Living Loft, We are a furniture store that offers various
+            types of high quality furniture at affordable prices.
           </p>
         </div>
         <div class="footer-column">
@@ -465,12 +461,11 @@
           <p>Email: support@livingloft.co.id</p>
         </div>
       </div>
+      <div class="footer-bottom">
+        <span class="logo-text">LIVING LOFT</span>
+        <p>&copy; 2024 Made with 🤍 in Indonesia</p>
+      </div>
     </footer>
-
-    <div class="footer-bottom">
-      <span class="logo-text">LIVING LOFT</span>
-      <p>&copy; 2024 Made with 🤍 in Indonesia</p>
-    </div>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
