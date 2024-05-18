@@ -1,11 +1,5 @@
 // script.js
 document.addEventListener("DOMContentLoaded", function () {
-  // Fungsi untuk mengubah nama produk menjadi string yang dapat digunakan dalam URL
-  function formatProductNameForURL(productName) {
-    // Menghilangkan spasi dan mengganti dengan tanda hubung (-)
-    return productName.toLowerCase().replace(/\s+/g, "-");
-  }
-
   // Data produk dengan nama dalam bahasa Inggris dan URL gambar yang ditetapkan secara statis
   const products = [
     {

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+
+      .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .login-box {
+        max-width: 400px;
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .login-box img {
+        width: 100px;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      .form-group {
+        text-align: left;
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        max-width: 380px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      button {
+        width: 400px;
+        padding: 10px;
+        background-color: #659a9f;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #4c7d81;
+      }
+
+      .links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .links a {
+        color: #659a9f;
+        text-decoration: none;
+      }
+
+      .links span {
+        color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-box">
+        <img
+          src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+          alt="Google Logo" />
+        <h2>Sign in</h2>
+        <form action="#" method="POST">
+          <div class="form-group">
+            <label for="username">Email or phone</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <button type="submit">Next</button>
+        </form>
+        <p>Not your computer? Use Guest mode to sign in privately.</p>
+        <a href="#">Learn more</a>
+        <hr />
+        <div class="links">
+          <a href="#">Forgot password?</a>
+          <span>&nbsp;•&nbsp;</span>
+          <a href="#">Create account</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

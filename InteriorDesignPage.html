@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interior Design Services</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+      }
+
+      .container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .container p {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .grid-gallery {
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fill,
+          minmax(150px, 1fr)
+        ); /* Ubah minmax(150px, 1fr) sesuai kebutuhan */
+        grid-gap: 20px;
+      }
+
+      .grid-gallery img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover; /* agar gambar terpenuhi di dalam figure */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="main-nav">
+        <span class="logo-text">LIVING LOFT</span>
+
+        <div class="search-container">
+          <input type="search" placeholder="Search" class="search-input" />
+          <i data-feather="search" class="search-icon"></i>
+        </div>
+
+        <ul class="auth-cart">
+          <li class="nav-item"><a href="loginPage.html">Login</a></li>
+          <li class="nav-item"><a href="cartPage.html">Cart</a></li>
+        </ul>
+      </nav>
+      <nav class="sub-navbar">
+        <ul class="navbar">
+          <li class="nav-item"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="productPage.html">Product</a></li>
+          <li class="nav-item">
+            <a href="InteriorDesignPage.html">Interior</a>
+          </li>
+          <li class="nav-item">
+            <a href="aboutUs.html">About</a>
+          </li>
+          <li class="nav-item"><a href="contactUs.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h2>Interior Design Services</h2>
+      <p>
+        Transform your space into a work of art with our professional interior
+        design services. Browse through our portfolio below for inspiration:
+      </p>
+      <div class="grid-gallery">
+        <img
+          src="https://source.unsplash.com/250x250/?interior-design=1"
+          alt="a random interior design" />
+
+        <img
+          src="https://source.unsplash.com/250x250/?interior-design=2"
+          alt="a random interior design" />
+
+        <img
+          src="https://source.unsplash.com/250x250/?interior-design=3"
+          alt="a random interior design" />
+
+        <img
+          src="https://source.unsplash.com/250x250/?interior-design=4"
+          alt="a random interior design" />
+
+        <img
+          src="https://source.unsplash.com/250x250/?interior-design=5"
+          alt="a random interior design" />
+
+        <img
+          src="https://source.unsplash.com/250x250/?interior-design=6"
+          alt="a random interior design" />
+
+        <img
+          src="https://source.unsplash.com/250x250/?interior-design=7"
+          alt="a random interior design" />
+        <img
+          src="https://source.unsplash.com/250x250/?interior-design=8"
+          alt="a random interior design" />
+
+        <img
+          src="https://source.unsplash.com/250x250/?interior-design=9"
+          alt="a random interior design" />
+
+        <img
+          src="https://source.unsplash.com/250x250/?interior-design=10"
+          alt="a random interior design" />
+
+        <img
+          src="https://source.unsplash.com/250x250/?interior-design=11"
+          alt="a random interior design" />
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-column">
+          <h3>About Us</h3>
+          <p>
+            Welcome to Living Loft, your one-stop destination for high-quality
+            furniture and home decor. We are passionate about providing our
+            customers with stylish and functional furniture pieces that elevate
+            their living spaces.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="#">Living Room</a></li>
+            <li><a href="#">Bedroom</a></li>
+            <li><a href="#">Kitchen</a></li>
+            <li><a href="#">Bathroom</a></li>
+            <li><a href="#">Office</a></li>
+            <li><a href="#">Outdoor</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Pages</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Interior Design</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <p>Jl. Ketintang No.123</p>
+          <p>Surabaya, 10110</p>
+          <p>Phone: (021) 555-1234</p>
+          <p>Email: support@livingloft.co.id</p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="footer-bottom">
+      <span class="logo-text">LIVING LOFT</span>
+      <p>&copy; 2024 Made with 🤍 in Indonesia</p>
+    </div>
+  </body>
+</html>

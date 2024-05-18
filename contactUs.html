@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .sub-contact-info,
+      .contact-form {
+        flex-basis: calc(50% - 10px);
+        margin-bottom: 20px;
+      }
+
+      .sub-contact-info p {
+        margin: 5px 0;
+      }
+
+      .contact-form input[type="text"],
+      .contact-form input[type="email"],
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      .contact-form textarea {
+        resize: vertical;
+      }
+
+      .contact-form button {
+        width: 100%;
+        padding: 10px 20px;
+        background-color: #659a9f;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .contact-form button:hover {
+        background-color: #4c7d81;
+      }
+
+      .map-container {
+        max-width: 800px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="main-nav">
+        <span class="logo-text">LIVING LOFT</span>
+
+        <div class="search-container">
+          <input type="search" placeholder="Search" class="search-input" />
+          <i data-feather="search" class="search-icon"></i>
+        </div>
+
+        <ul class="auth-cart">
+          <li class="nav-item"><a href="loginPage.html">Login</a></li>
+          <li class="nav-item"><a href="cartPage.html">Cart</a></li>
+        </ul>
+      </nav>
+      <nav class="sub-navbar">
+        <ul class="navbar">
+          <li class="nav-item"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="productPage.html">Product</a></li>
+          <li class="nav-item">
+            <a href="InteriorDesignPage.html">Interior</a>
+          </li>
+          <li class="nav-item">
+            <a href="aboutUs.html">About</a>
+          </li>
+          <li class="nav-item"><a href="contactUs.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="contact-info">
+        <h2>SUBMIT A REQUEST</h2>
+        <p>
+          Dont worry, we are expert in home and office furniture, repair and
+          upholstery service, home accessories and home deco.
+        </p>
+      </div>
+      <div class="sub-contact-info">
+        <h2><i data-feather=""></i> OPEN HOURS</h2>
+        <p>Sat – Sun :<br />10:00AM – 18:00PM</p>
+      </div>
+      <div class="sub-contact-info">
+        <h2><i data-feather="phone"></i> PHONE NUMBER</h2>
+        <p>(+60)18 267 6576</p>
+      </div>
+      <div class="sub-contact-info">
+        <h2><i data-feather="map-pin"></i> OUR LOCATION</h2>
+        <p>
+          2, Jalan Kajang Perdana 2/2,<br />Taman Kajang Perdana,<br />43000
+          Kajang, Selangor
+        </p>
+      </div>
+
+      <div class="contact-form">
+        <h2>Send Us a Message</h2>
+        <form action="#" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            rows="5"
+            required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1929269779735!2d-73.9850296845998!3d40.75889667932717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259103d08e165%3A0x19f6d3d95a4ec09!2sTimes%20Square%2C%20New%20York%2C%20NY%2010018%2C%20USA!5e0!3m2!1sen!2s!4v1632461512857!5m2!1sen!2s"
+        width="800"
+        height="350"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"></iframe>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-column">
+          <h3>About Us</h3>
+          <p>
+            Welcome to Living Loft, We are a furniture store that offers various
+            types of high quality furniture at affordable prices.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="#">Living Room</a></li>
+            <li><a href="#">Bedroom</a></li>
+            <li><a href="#">Kitchen</a></li>
+            <li><a href="#">Bathroom</a></li>
+            <li><a href="#">Office</a></li>
+            <li><a href="#">Outdoor</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Pages</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Interior Design</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <p>Jl. Ketintang No.123</p>
+          <p>Surabaya, 10110</p>
+          <p>Phone: (021) 555-1234</p>
+          <p>Email: support@livingloft.co.id</p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="footer-bottom">
+      <span class="logo-text">LIVING LOFT</span>
+      <p>&copy; 2024 Made with 🤍 in Indonesia</p>
+    </div>
+  </body>
+</html>

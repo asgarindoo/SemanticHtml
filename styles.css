@@ -1,12 +1,9 @@
-/* styles.css */
-
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var();
+  background-color: #ffffff;
   overflow-x: hidden;
-  /* border: red 1px solid; */
 }
 
 header {
@@ -20,7 +17,6 @@ h1 {
   font-size: 24px;
   color: #333;
 }
-/* Main navigation styles */
 
 nav.main-nav {
   display: flex;
@@ -30,7 +26,6 @@ nav.main-nav {
   background-color: #fff;
 }
 
-/* Logo container */
 nav.main-nav .logo-text {
   font-family: "Montserrat", sans-serif;
   font-size: 24px;
@@ -41,43 +36,42 @@ nav.main-nav .logo-text {
   padding: 10px auto;
 }
 
-/* CSS untuk form pencarian */
 .search-container {
   position: relative;
-  width: 500px; /* Lebar penuh */
+  width: 500px;
 }
 
 .search-input {
-  width: 100%; /* Lebar penuh */
-  padding: 10px 40px 10px 15px; /* Padding untuk ruang internal, lebih besar pada kanan untuk ruang ikon */
-  border-radius: 25px; /* Bentuk sudut yang lebih bulat */
-  border: 1px solid #ccc; /* Warna border */
+  width: 100%;
+  padding: 10px 40px 10px 15px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
   outline: none;
-  transition: border-color 0.3s, box-shadow 0.3s; /* Transisi yang lebih halus */
-  box-shadow: none; /* Bayangan saat normal */
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-shadow: none;
 }
 
 .search-input:focus {
-  border-color: #333; /* Warna border saat fokus */
+  border-color: #333;
 }
 
 .search-icon {
   position: absolute;
-  top: 50%; /* Posisikan ikon di tengah vertikal input */
-  right: 15px; /* Tempatkan ikon di sisi kanan */
+  top: 50%;
+  right: 15px;
   transform: translateY(-50%);
-  color: #555; /* Warna ikon yang lebih gelap untuk kontras lebih tinggi */
-  font-size: 20px; /* Ukuran ikon yang proporsional dengan input */
-  pointer-events: none; /* Nonaktifkan event klik pada ikon */
+  color: #555;
+  font-size: 20px;
+  pointer-events: auto;
 }
 
-/* Auth-cart styles */
 nav.main-nav ul.auth-cart {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 10px; /* Jarak antar item auth-cart */
+  gap: 10px;
+  z-index: 9999;
 }
 
 nav.main-nav ul.auth-cart li.nav-item a {
@@ -116,16 +110,16 @@ nav.sub-navbar ul.navbar li.nav-item a:hover {
   color: #fff;
 }
 
-/* Styling untuk halaman hero */
 .hero {
   display: flex;
   height: 100vh;
+  width: 100%;
   background-color: #fff;
 }
 
 .hero-left {
   flex: 1;
-  padding: 0px 0px 60px 0; /* Remove padding on the left */
+  padding: 0px 0px 60px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -213,7 +207,6 @@ button.Hero-button-right:hover {
   height: auto;
 }
 
-/* Main Content */
 main {
   font-family: "Montserrat", sans-serif;
   display: flex;
@@ -292,7 +285,7 @@ aside {
   flex: 1;
   height: 350px;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Efek bayangan lembut */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   padding: 20px;
   position: sticky;
@@ -302,36 +295,31 @@ aside {
   text-align: justify;
 }
 
-/* Gaya untuk elemen <h2> di sisi */
 aside h2 {
   font-size: 2em;
   margin-bottom: 30px;
 }
 
-/* Gaya untuk gambar di sisi */
 aside img {
   max-width: 100%;
   height: auto;
   margin-top: 20px;
-  border-radius: 8px; /* Tambahkan sudut membulatkan */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Efek bayangan lembut */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Gaya untuk bagian artikel */
 #artikel-container {
   padding: 20px;
   background-color: #fff;
   border-radius: 10px;
 }
 
-/* Gaya untuk judul bagian artikel */
 #artikel-container h2 {
   text-align: center;
   font-size: 2em;
   margin-bottom: 30px;
 }
 
-/* Gaya untuk elemen artikel */
 .article {
   margin-bottom: 20px;
   padding: 15px;
@@ -339,7 +327,6 @@ aside img {
   position: relative;
 }
 
-/* Gaya untuk judul artikel */
 .article h3 {
   color: #659a9f;
 }
@@ -359,21 +346,21 @@ aside img {
   top: 50%;
   left: 80%;
   transform: translate(-50%, -50%);
-  visibility: hidden; /* Menyembunyikan popup di awal */
+  visibility: hidden;
   padding: 10px;
   border-radius: 10px;
   z-index: 1000;
 }
 
-/* Gaya untuk gambar dalam popup */
 .popup img {
-  width: 300px; /* Ukuran gambar */
-  height: 200px; /* Gambar akan proporsional */
+  width: 300px;
+  height: 200px;
   border-radius: 5px;
 }
 
 .testimonials-section {
-  height: 100vh;
+  height: auto;
+  padding: 20px;
 }
 
 .testimonials-section h2 {
@@ -384,7 +371,7 @@ aside img {
 
 .testimonials {
   display: flex;
-  flex-wrap: wrap; /* Memastikan pemutaran baris */
+  flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
 }
@@ -395,7 +382,7 @@ aside img {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  margin: 10px; /* Jarak antar testimonial cards */
+  margin: 10px;
   text-align: center;
 }
 
@@ -431,8 +418,10 @@ aside img {
 }
 
 .footer-column {
-  width: 300px;
+  flex: 1;
+  min-width: 220px;
   margin-bottom: 20px;
+  padding: 0 15px;
 }
 
 .footer-column h3 {
@@ -454,12 +443,13 @@ aside img {
 }
 
 .footer-bottom {
-  background-color: #659a9f; /* Warna latar belakang footer */
+  background-color: #659a9f;
   padding: 10px 20px;
   width: 100%;
-  display: flex; /* Menggunakan flexbox */
-  justify-content: space-between; /* Menyusun elemen di antara ruang kosong */
-  align-items: center; /* Mengatur vertikal elemen */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .footer-bottom .logo-text {
@@ -468,47 +458,53 @@ aside img {
   font-weight: 200;
   margin: 0;
   letter-spacing: 0.25em;
-  padding: 10px auto;
-  color: #fff; /* Warna teks logo */
+  color: #fff;
 }
 
 .footer-bottom p {
   margin-left: 20px;
-  margin-right: 50px;
-  color: #fff; /* Warna teks hak cipta */
+  color: #fff;
+  text-align: center;
+  flex: 1;
 }
 
-/* Tata letak responsif menggunakan media queries */
 @media screen and (max-width: 992px) {
   main {
-    flex-direction: column; /* Mengubah tata letak menjadi satu kolom saat layar medium */
-    margin: 10px; /* Mengurangi margin secara keseluruhan */
+    flex-direction: column;
+    margin: 10px;
   }
 
   .produk {
-    padding: 20px; /* Menambahkan ruang di sekitar produk */
-    margin-left: 0; /* Menghapus margin kiri pada produk */
+    padding: 20px;
+    margin-left: 0;
   }
-
   .produk-item {
-    width: calc(
-      25% - 10px
-    ); /* Mengatur lebar produk-item menjadi 25% minus margin */
-    margin-right: 10px; /* Menghapus margin kanan pada produk-item */
-    margin-bottom: 20px; /* Menambahkan ruang di antara produk-item */
-    box-sizing: border-box; /* Menghitung lebar elemen termasuk padding dan border */
+    width: calc(25% - 10px);
+    margin-right: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
   }
 
   aside {
-    display: none; /* Sembunyikan elemen aside saat lebar layar mencapai 992px */
+    display: none;
   }
 }
 
-/* Responsive styles for smaller devices */
 @media only screen and (max-width: 768px) {
-  .search-input {
-    padding: 10px 30px 10px 15px; /* Kurangi padding kanan untuk layar lebih kecil */
+  .search-container {
+    display: none;
   }
+
+  nav.main-nav a {
+    font-size: 14px;
+    margin-left: 0px;
+  }
+  nav.sub-navbar a {
+    display: inline-block;
+    font-size: 14px;
+    margin: -3px;
+  }
+
   .hero {
     flex-direction: column;
     height: 70vh;
@@ -540,26 +536,50 @@ aside img {
   }
 
   main {
-    flex-direction: column; /* Mengubah tata letak menjadi satu kolom saat lebar layar kecil */
-    margin: 10px; /* Mengurangi margin secara keseluruhan */
+    flex-direction: column;
+    margin: 10px;
   }
 
   .produk {
-    margin-left: 0; /* Menghapus margin kiri pada produk */
+    margin-left: 0;
   }
-
   .produk-item {
-    width: 100%; /* Mengisi lebar produk-item ke lebar penuh saat layar kecil */
+    width: 100%;
     height: 460px;
-    margin-right: 0; /* Menghapus margin kanan pada produk-item */
+    margin-right: 0;
   }
 
   aside {
-    margin-right: 0; /* Menghapus margin kanan pada sidebar */
-    margin-top: 20px; /* Mengurangi margin atas pada sidebar */
+    margin-right: 0;
+    margin-top: 20px;
   }
 
   .popup {
     display: none;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-column {
+    width: 100%;
+    /* text-align: center; */
+    padding: 20px;
+    max-width: 380px;
+  }
+
+  /* .footer-bottom {
+    flex-direction: column;
+  } */
+
+  .footer-bottom .logo-text {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  .footer-bottom p {
+    font-size: 10px;
+    margin: 10px 0;
   }
 }

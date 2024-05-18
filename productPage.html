@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Page</title>
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+      }
+
+      header {
+        padding: 10px 20px;
+        background-color: #ffffff;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 24px;
+        color: #333;
+      }
+
+      nav.main-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      nav.main-nav .logo-text {
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 200;
+        color: #333;
+        margin: 0;
+        letter-spacing: 0.25em;
+        padding: 10px auto;
+      }
+
+      .search-container {
+        position: relative;
+        width: 500px;
+      }
+
+      .search-input {
+        width: 100%;
+        padding: 10px 40px 10px 15px;
+        border-radius: 25px;
+        border: 1px solid #ccc;
+        outline: none;
+        transition: border-color 0.3s, box-shadow 0.3s;
+        box-shadow: none;
+      }
+
+      .search-input:focus {
+        border-color: #333;
+      }
+
+      .search-icon {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        color: #555;
+        font-size: 20px;
+        pointer-events: auto;
+      }
+
+      nav.main-nav ul.auth-cart {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 10px;
+        z-index: 9999;
+      }
+
+      nav.main-nav ul.auth-cart li.nav-item a {
+        text-decoration: none;
+        color: #333;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      nav.main-nav ul.auth-cart li.nav-item a:hover {
+        background-color: #659a9f;
+        color: #fff;
+      }
+
+      nav.sub-navbar ul.navbar {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: flex-start;
+        gap: 15px;
+        padding: 10px 20px 0 10px;
+      }
+
+      nav.sub-navbar ul.navbar li.nav-item a {
+        text-decoration: none;
+        color: #333;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      nav.sub-navbar ul.navbar li.nav-item a:hover {
+        background-color: #659a9f;
+        color: #fff;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .sidebar {
+        flex-basis: 300px; /* Menambahkan sedikit lebar sidebar */
+        background-color: #fff; /* Warna latar belakang yang lebih modern */
+        box-shadow: #659a9f 0px 0px 2px;
+        padding: 20px;
+        border-radius: 4px;
+        margin-right: 30px; /* Menambahkan margin antara sidebar dan produk */
+        transition: all 0.3s ease; /* Efek transisi untuk perubahan pada filter */
+      }
+
+      .filter-title {
+        font-size: 24px; /* Menggunakan ukuran huruf yang lebih besar */
+        margin: 0 0 20px; /* Memberikan margin bawah */
+        color: #333; /* Warna teks yang lebih gelap */
+      }
+
+      .filter-category {
+        font-size: 18px; /* Menggunakan ukuran huruf yang lebih besar */
+        margin-top: 20px;
+        color: #555; /* Warna teks yang lebih gelap */
+      }
+
+      .filter-options input[type="text"],
+      .filter-options select {
+        width: 80%; /* Menyesuaikan lebar filter dengan sidebar */
+        padding: 10px;
+        margin-top: 10px; /* Menambahkan sedikit margin antara filter */
+        border: 1px solid #ddd; /* Menambahkan border */
+        border-radius: 6px;
+      }
+
+      .filter-options input[type="text"]:focus,
+      .filter-options select:focus {
+        outline: none;
+        border-color: #659a9f;
+      }
+
+      .products {
+        flex: 3;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .produk-item {
+        width: calc(33.33% - 20px);
+        margin-bottom: 20px;
+        border: 1px solid #659a9f;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .produk-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+
+      .produk-item-details {
+        padding: 10px;
+      }
+
+      .produk-item h3 {
+        font-size: 1.2em;
+        margin: 0;
+        margin-bottom: 5px;
+      }
+
+      .produk-item h5 {
+        font-weight: 400;
+        font-size: 1em;
+        margin: 0;
+        margin-bottom: 5px;
+      }
+
+      .produk-item p {
+        font-size: 0.8rem;
+        margin: 0;
+        margin-bottom: 10px;
+        height: 40px;
+        overflow-y: hidden;
+      }
+
+      .produk-item button {
+        padding: 8px 16px;
+        background-color: #fff;
+        border: 1px solid #659a9f;
+        color: #659a9f;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .produk-item button:hover {
+        background-color: #659a9f;
+        color: #fff;
+      }
+
+      .footer {
+        background-color: #ebf2f3;
+        color: #659a9f;
+        padding: 50px 0;
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-column {
+        flex: 1;
+        min-width: 220px;
+        margin-bottom: 20px;
+        padding: 0 15px;
+      }
+
+      .footer-column h3 {
+        margin-bottom: 10px;
+      }
+
+      .footer-column ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-column ul li {
+        margin-bottom: 5px;
+      }
+
+      .footer-column ul li a {
+        color: #659a9f;
+        text-decoration: none;
+      }
+
+      .footer-bottom {
+        background-color: #659a9f;
+        padding: 10px 20px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .footer-bottom .logo-text {
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 200;
+        margin: 0;
+        letter-spacing: 0.25em;
+        color: #fff;
+      }
+
+      .footer-bottom p {
+        margin-left: 20px;
+        color: #fff;
+        text-align: center;
+        flex: 1;
+      }
+
+      /* Menambahkan aturan media query untuk layar berukuran kecil */
+      @media only screen and (max-width: 768px) {
+        .search-container {
+          display: none;
+        }
+
+        nav.main-nav a {
+          font-size: 14px;
+          margin-left: 0px;
+        }
+        nav.sub-navbar a {
+          display: inline-block;
+          font-size: 14px;
+          margin: -3px;
+        }
+
+        .container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .sidebar {
+          flex-basis: 100%;
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+
+        .produk-item {
+          width: calc(50% - 20px); /* Menyesuaikan lebar item produk */
+        }
+
+        .footer-inner {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .footer-column {
+          width: 100%;
+          /* text-align: center; */
+          padding: 20px;
+          max-width: 380px;
+        }
+
+        /* .footer-bottom {
+    flex-direction: column;
+  } */
+
+        .footer-bottom .logo-text {
+          font-size: 20px;
+          margin: 10px 0;
+        }
+        .footer-bottom p {
+          font-size: 10px;
+          margin: 10px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="main-nav">
+        <span class="logo-text">LIVING LOFT</span>
+
+        <div class="search-container">
+          <input type="search" placeholder="Search" class="search-input" />
+          <i data-feather="search" class="search-icon"></i>
+        </div>
+
+        <ul class="auth-cart">
+          <li class="nav-item"><a href="loginPage.html">Login</a></li>
+          <li class="nav-item"><a href="cartPage.html">Cart</a></li>
+        </ul>
+      </nav>
+      <nav class="sub-navbar">
+        <ul class="navbar">
+          <li class="nav-item"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="productPage.html">Product</a></li>
+          <li class="nav-item">
+            <a href="InteriorDesignPage.html">Interior</a>
+          </li>
+          <li class="nav-item">
+            <a href="aboutUs.html">About</a>
+          </li>
+          <li class="nav-item"><a href="contactUs.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="sidebar">
+        <div class="filter-header">
+          <h1 class="filter-title">Filter</h1>
+        </div>
+        <div class="filter-body">
+          <h2 class="filter-category">Price</h2>
+          <div class="filter-options">
+            <input type="text" id="minPrice" placeholder="Min" />
+            <input type="text" id="maxPrice" placeholder="Max" />
+          </div>
+
+          <h2 class="filter-category">Stock</h2>
+          <div class="filter-options">
+            <input type="checkbox" id="inStock" />
+            <label for="inStock">In Stock</label>
+          </div>
+
+          <h2 class="filter-category">Material</h2>
+          <div class="filter-options">
+            <select id="materialSelect">
+              <option value="">Select Material</option>
+              <option value="Wood">Wood</option>
+              <option value="Metal">Metal</option>
+              <option value="Plastic">Plastic</option>
+              <option value="Glass">Glass</option>
+              <option value="Fabric">Fabric</option>
+            </select>
+          </div>
+
+          <h2 class="filter-category">Style</h2>
+          <div class="filter-options">
+            <select id="styleSelect">
+              <option value="">Select Style</option>
+              <option value="Modern">Modern</option>
+              <option value="Vintage">Vintage</option>
+              <option value="Industrial">Industrial</option>
+              <option value="Minimalist">Minimalist</option>
+              <option value="Classic">Classic</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="products" id="produk-container">
+        <!-- Produk ditambahkan secara dinamis menggunakan JavaScript -->
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-column">
+          <h3>About Us</h3>
+          <p>
+            Welcome to Living Loft, your one-stop destination for high-quality
+            furniture and home decor. We are passionate about providing our
+            customers with stylish and functional furniture pieces that elevate
+            their living spaces.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="#">Living Room</a></li>
+            <li><a href="#">Bedroom</a></li>
+            <li><a href="#">Kitchen</a></li>
+            <li><a href="#">Bathroom</a></li>
+            <li><a href="#">Office</a></li>
+            <li><a href="#">Outdoor</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Pages</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Interior Design</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <p>Jl. Ketintang No.123</p>
+          <p>Surabaya, 10110</p>
+          <p>Phone: (021) 555-1234</p>
+          <p>Email: support@livingloft.co.id</p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="footer-bottom">
+      <span class="logo-text">LIVING LOFT</span>
+      <p>&copy; 2024 Made with 🤍 in Indonesia</p>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const products = [
+          {
+            name: "White Modern Sofa",
+            description:
+              "Modern white sofa with an elegant design, perfect for comfortable seating.",
+            price: 1500000, // Harga dalam Rupiah
+            image:
+              "https://images.unsplash.com/photo-1507138451611-3001135909fa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          },
+          {
+            name: "Table and Chair Set",
+            description:
+              "Minimalist table and chair set suitable for living rooms or dining rooms.",
+            price: 1200000, // Harga dalam Rupiah
+            image:
+              "https://images.unsplash.com/photo-1634133958135-25e6d58df149?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fFRhYmxlJTIwYW5kJTIwQ2hhaXIlMjBTZXR8ZW58MHx8MHx8fDA%3D",
+          },
+          {
+            name: "Minimalist Hanging Lamp",
+            description:
+              "Hanging lamp with minimalist design suitable for modern room lighting.",
+            price: 500000, // Harga dalam Rupiah
+            image:
+              "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8TWluaW1hbGlzdCUyMEhhbmdpbmclMjBMYW1wfGVufDB8fDB8fHww",
+          },
+          {
+            name: "Modern Bookshelf",
+            description:
+              "Modern bookshelf with plenty of storage space suitable for storing your book collection.",
+            price: 800000, // Harga dalam Rupiah
+            image:
+              "https://images.unsplash.com/photo-1593430980369-68efc5a5eb34?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHNoZWxmfGVufDB8fDB8fHww",
+          },
+          {
+            name: "Comfortable Sofa Bed",
+            description:
+              "Comfortable and practical sofa bed, can be converted into a bed for visiting guests.",
+            price: 2000000, // Harga dalam Rupiah
+            image:
+              "https://plus.unsplash.com/premium_photo-1677739767604-8ac8667f0794?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8U29mYSUyMEJlZHxlbnwwfHwwfHx8MA%3D%3D",
+          },
+          {
+            name: "Wooden Wardrobe",
+            description:
+              "Wardrobe made of high-quality wood with an elegant design.",
+            price: 1800000, // Harga dalam Rupiah
+            image:
+              "https://images.unsplash.com/photo-1527854269107-68e2d1343e1d?q=80&w=1790&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          },
+          {
+            name: "Minimalist Work Desk",
+            description:
+              "Work desk with minimalist design suitable for office spaces or study corners.",
+            price: 900000, // Harga dalam Rupiah
+            image:
+              "https://plus.unsplash.com/premium_photo-1711051475117-f3a4d3ff6778?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          },
+          {
+            name: "Modern TV Cabinet",
+            description:
+              "TV cabinet with modern design and enough storage space for electronic devices.",
+            price: 1200000, // Harga dalam Rupiah
+            image:
+              "https://images.unsplash.com/photo-1565058650109-849d383455ef?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          },
+          {
+            name: "Wooden Lounge Chair",
+            description:
+              "Lounge chair with natural wooden material that gives a warm and natural impression in your living room.",
+            price: 600000, // Harga dalam Rupiah
+            image:
+              "https://plus.unsplash.com/premium_photo-1681449856689-8e1087f321f5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          },
+        ];
+
+        const produkContainer = document.getElementById("produk-container");
+
+        products.forEach((product) => {
+          const produkItem = document.createElement("div");
+          produkItem.classList.add("produk-item");
+          produkItem.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <div class="produk-item-details">
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <h5>Rp ${product.price.toLocaleString()}</h5>
+                <button>Beli Sekarang</button>
+            </div>
+        `;
+          produkContainer.appendChild(produkItem);
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Function to filter products based on selected criteria
+        function filterProducts() {
+          // Retrieve selected values
+          var minPrice = document.getElementById("minPrice").value;
+          var maxPrice = document.getElementById("maxPrice").value;
+          var inStock = document.getElementById("inStock").checked;
+          var material = document.getElementById("materialSelect").value;
+          var style = document.getElementById("styleSelect").value;
+
+          // Implement filtering logic here
+          console.log("Filtering products...");
+          console.log("Min Price:", minPrice);
+          console.log("Max Price:", maxPrice);
+          console.log("In Stock:", inStock);
+          console.log("Material:", material);
+          console.log("Style:", style);
+        }
+
+        // Event listeners for filter options
+        document
+          .getElementById("minPrice")
+          .addEventListener("change", filterProducts);
+        document
+          .getElementById("maxPrice")
+          .addEventListener("change", filterProducts);
+        document
+          .getElementById("inStock")
+          .addEventListener("change", filterProducts);
+        document
+          .getElementById("materialSelect")
+          .addEventListener("change", filterProducts);
+        document
+          .getElementById("styleSelect")
+          .addEventListener("change", filterProducts);
+      });
+    </script>
+  </body>
+</html>
